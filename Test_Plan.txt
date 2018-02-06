@@ -1,0 +1,107 @@
+Test plan - Webimages_downloader
+
+
+Environment :
+Python 2.7.12 on Ubuntu 16
+
+Prerequisites
+External library Beautiful soup is installed.
+Parser lxml is installed
+
+Usage of script:
+python webimages_downloader.py
+
+Expected behaviour on execution: 
+
+The user is to enter a URL at the prompt. If the URL is valid, the source is parsed to check for images on the page. The images are then downloaded to  new folder. The URLs to the images are stored on a file in the local directory.
+
+
+TEST SCENARIOS:
+
+URL VALIDATION
+
+Scenario:
+
+1. Run the script
+2. Enter a valid absolute URL (https://www.google.com)
+3. Check for expected behaviour
+
+Scenario:
+
+1. Run the script
+2. Enter an invalid URL (hsddsdsdfa)
+3. Check for exceptions
+
+Scenario:
+
+1. Run the script
+2. Enter an incomplete URL (httw.google.com)
+3. Check for exceptions
+
+Scenario:
+
+1. Run the script
+2. Enter a valid URL to a page that does not load
+3. Check for exceptions
+
+DIRECTORY CHECK:
+
+Scenario:
+
+1. Run the script
+2. Enter a valid absolute URL (https://www.google.com)
+3. On completion, run the script again. 
+4. reenter the same URL
+5. Expect the Directory to be created again without throwing errors
+
+FILEWRITE:
+
+Scenario:
+
+1. Run the script
+2. Enter a valid absolute URL which has no images
+3. Check file for URL links(should be empty)
+ 
+Scenario:
+
+1. Run the script
+2. Enter a valid absolute URL (https://www.google.com)
+3. Check file for URL links
+
+Scenario:
+
+1. Run the script
+2. Enter multiple absolute URLs (https://www.google.com https://www.ikea.com)
+3. Check for downloaded images
+
+FILEDOWNLOAD: 
+
+Scenario
+
+1. Run the script
+2. Enter a valid absolute URL (https://www.google.com)
+3. Check for downloaded images in new_name folder
+
+Scenario
+
+1. Run the script
+2. Enter a valid absolute URL with no images
+3. Check if new folder is created
+
+Scenario
+
+1. Run the script
+2. Enter a valid absolute URL (https://www.google.com)
+3. Check for downloaded images in new_name folder
+
+Scenario
+
+1. Run the script
+2. Enter a valid absolute URL
+3. Check if the number of images downloaded and the number of lines in URLFile.txt are same
+
+
+
+
+
+
